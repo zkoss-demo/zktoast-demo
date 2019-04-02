@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns:n="native">
+	<div style="padding: 5px; border: 1px solid #339999" 
+			viewModel="@id('vm') @init('zk.demo.ToastVM')">
+		<n:table>
+			<n:tr>
+				<n:td rowspan="2">
+					<button label="Show" onClick="@command('showToast')" />
+				</n:td>
+				<n:td>
+					<label>Position</label>
+				</n:td>
+				<n:td>
+					<label>Type</label>
+				</n:td>
+				<n:td>
+					<label>Duration (ms)</label>
+				</n:td>
+				<n:td>
+					<label>Message</label>
+				</n:td>
+				<n:td>
+					<label>Closable</label>
+				</n:td>
+			</n:tr>
+			<n:tr>
+				<n:td>
+					<selectbox id="posbox" model="@init(vm.positionModel)"
+								selectedItem="@save(vm.position)"/>
+				</n:td>
+				<n:td>
+					<selectbox id="typebox" model="@init(vm.typeModel)"
+								selectedItem="@save(vm.type)" />
+				</n:td>
+				<n:td>
+					<checkbox id="adcb" checked="@bind(vm.durationEnabled)" />
+					<intbox id="adms" value="@bind(vm.duration)" />
+				</n:td>
+				<n:td>
+					<listbox id="msgbox" mold="select"
+								model="@init(vm.messageModel)"
+								selectedIndex="@bind(vm.messageIndex)">
+						<template name="model">
+							<listitem label="@init(each)" />
+						</template>
+					</listbox>
+				</n:td>
+				<n:td>
+					<checkbox id="closable" checked="@bind(vm.closable)" />
+				</n:td>
+			</n:tr>
+		</n:table>
+	</div>
+</zk>
