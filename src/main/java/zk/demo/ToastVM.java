@@ -1,5 +1,6 @@
 package zk.demo;
 
+import org.zkoss.addon.toast.Toast;
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.zk.ui.util.*;
 import org.zkoss.zul.*;
@@ -95,6 +96,6 @@ public class ToastVM {
 			? msgsValue[messageIndex - 1]
 			: msgsValue[(int) (Math.random() * msgsValue.length)];
 		int dur = durationEnabled ? duration : -1;
-		org.zkoss.addon.toast.Clients.showToast(msg, type, position, dur, closable);
+		Toast.show(msg, type, position, dur, closable);
 	}
 }
