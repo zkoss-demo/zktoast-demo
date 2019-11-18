@@ -1,6 +1,6 @@
 package zk.demo;
 
-import org.zkoss.addon.toast.Toast;
+import org.zkoss.zkmax.ui.util.Toast;
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.zk.ui.util.*;
 import org.zkoss.zul.*;
